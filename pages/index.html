@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
     <title>FAQ</title>
 </head>
 <body>
@@ -11,16 +12,18 @@
         <h1>FAQ</h1>
         <nav>
             <h2>Menu de documentos</h2>
-            <ul>
-                <li><a href="#">Desarrollo web Front-end</a></li>
-                <li><a href="#">Conceptos básicos de HTML</a></li>
-                <li><a href="#">JavaScript</a></li>
-                <li><a href="#">Desarrollo web Back-end</a></li>
-            </ul>
+            
+            <button data-target="#desarrollo-web">Desarrollo web Front-end</button>
+<button data-target="#concept-html">Conceptos básicos de HTML</button>
+<button data-target="#js">JavaScript</button>
+<button data-target="#b-end">Desarrollo web Back-end</button>
+
+                
+            
         </nav>
     </header>
 <main>
-    <section>
+    <section id="desarrollo-web">
         <article>
             <h2>Desarrollo web Front-end</h2>
             <p>El desarrollo web front-end consiste en la conversión de datos en una interfaz gráfica para que el usuario pueda ver e interactuar con la información de forma digital usando HTML, CSS y JavaScript.
@@ -32,7 +35,7 @@
                 HTML, siglas en inglés de Hyper Text Markup Language (lenguaje de marcas de hipertexto), es la columna vertebral de cualquier proceso de desarrollo web, sin el cual las páginas web no existirían. Hipertexto significa que el texto tiene enlaces, denominados hipervínculos, incrustados en el mismo. Cuando el usuario hace clic en una palabra o una frase que tiene un hipervínculo, se realiza una llamada a otra página web. El lenguaje de marcas indica que el texto puede convertirse en imágenes, tablas, enlaces, y otras representaciones. El código HTML es el que provee un marco general de cuál será el aspecto del sitio. HTML fue desarrollado por Tim Berners-Lee. La última versión de HTML se llama HTML5 y se publicó en 28 de octubre de 2014, por recomendación de W3C. Esta versión contiene nuevas y eficientes maneras de manejar elementos como archivos de vídeo y audio.</p>
         </article>
     </section>
-    <section>
+    <section id="concept-html">
         <article>
             <h2>Conceptos básicos de HTML</h2>
            
@@ -84,7 +87,7 @@
              
                 </article>
     </section>
-    <section>
+    <section id="css">
         <article>
             <h2>CSS</h2>
             <p> CSS básico
@@ -150,7 +153,7 @@
                 Dentro de cada regla, debes usar el punto y coma (;) para separar una declaración de la siguiente.
         </article>
     </section>
-    <section>
+    <section id="js">
         <article>
             <h2>JavaScript</h2>
             <p>JavaScript es un lenguaje de programación que te permite implementar cosas complejas en páginas web. Cada vez que una página web hace algo más que sentarse ahí y mostrar información estática para que la veas — mostrando actualizaciones de contenido oportunas, mapas interactivos, gráficos animados 2D/3D, desplazando máquinas reproductoras de video, o más, puedes apostar que probablemente JavaScript esté involucrado .
@@ -204,7 +207,7 @@
            </p>
       </article>
     </section>
-    <section>
+    <section id="b-end">
         <article>
             <h2>Desarrollo web Back-end</h2>
             <h3>¿Qué es el desarrollo back end?</h3>
@@ -213,18 +216,15 @@
     </section>
 
 </main>
+<script>
+    const buttons = document.querySelectorAll('button[data-target]');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const target = document.querySelector(button.dataset.target);
+            target.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
 </body>
 </html>
-
-
-
-
-
-
-<!-- Resources:
-Front-end: https://es.wikipedia.org/wiki/Desarrollo_web_Front-end
-HTML: https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/HTML_basics
-CSS: https://developer.mozilla.org/es/docs/Learn/CSS
-Javascript: https://developer.mozilla.org/es/docs/Learn/JavaScript
-Back-end: https://www.zorraquino.com/diccionario/internet/que-es-desarrollo-back-end.html --> 
-
